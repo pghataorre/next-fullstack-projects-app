@@ -27,7 +27,7 @@ const signinContent = {
 const initial = {email: '', password: '', firstName: '', lastName: ''}
 
 const AuthForm = ({mode}) => {
-  const [formState, setFormState] = useState({...initial})
+  const [formState, setFormState] = useState({...initial});
   const router = useRouter()
 
   const handleSubmit = async (e) => {
@@ -35,7 +35,7 @@ const AuthForm = ({mode}) => {
     try {
       if (mode === 'register') {
         const res = await register(formState);
-        if (res.signIn) router.push('/home');
+        router.push('/home');
 
       } else {
         await signin(formState);
